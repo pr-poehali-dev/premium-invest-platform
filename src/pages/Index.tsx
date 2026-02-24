@@ -298,6 +298,38 @@ export default function Index() {
         background: "radial-gradient(ellipse 80% 55% at 50% -10%, rgba(59,130,246,0.1) 0%, transparent 65%)", zIndex: 1,
       }} />
 
+      {/* Декоративные кольца — правый край */}
+      <div className="absolute pointer-events-none" style={{ right: "-18vw", top: "50%", transform: "translateY(-50%)", zIndex: 1 }}>
+        {[420, 580, 740, 900].map((size, i) => (
+          <div key={size} className="absolute" style={{
+            width: size, height: size,
+            borderRadius: "50%",
+            border: `1px solid rgba(79,142,247,${0.12 - i * 0.025})`,
+            top: "50%", left: "50%",
+            transform: "translate(-50%,-50%)",
+            boxShadow: i === 0 ? "0 0 40px rgba(79,142,247,0.06) inset" : "none",
+          }} />
+        ))}
+        {/* Крест в центре */}
+        <div className="absolute" style={{ width: 1, height: 120, background: "linear-gradient(180deg, transparent, rgba(79,142,247,0.35), transparent)", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
+        <div className="absolute" style={{ width: 120, height: 1, background: "linear-gradient(90deg, transparent, rgba(79,142,247,0.35), transparent)", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
+        {/* Орбитальная точка */}
+        <div className="absolute" style={{ width: 6, height: 6, borderRadius: "50%", background: "#4f8ef7", boxShadow: "0 0 12px rgba(79,142,247,0.8)", top: "calc(50% - 210px)", left: "50%", transform: "translateX(-50%)", animation: "spin 18s linear infinite", transformOrigin: "0 210px" }} />
+      </div>
+
+      {/* Угловой элемент — левый низ */}
+      <div className="absolute pointer-events-none" style={{ left: "-6vw", bottom: "8vh", zIndex: 1 }}>
+        {[200, 300].map((size, i) => (
+          <div key={size} style={{
+            position: "absolute", width: size, height: size, borderRadius: "50%",
+            border: `1px solid rgba(79,142,247,${0.1 - i * 0.04})`,
+            top: "50%", left: "50%", transform: "translate(-50%,-50%)",
+          }} />
+        ))}
+      </div>
+
+      <style>{`@keyframes spin { from { transform: translateX(-50%) rotate(0deg); } to { transform: translateX(-50%) rotate(360deg); } }`}</style>
+
       {showContent && (
         <div style={{ position: "relative", zIndex: 4, flex: 1, display: "flex", flexDirection: "column", padding: "24px 32px", boxSizing: "border-box", gap: "0" }}>
 
@@ -364,17 +396,17 @@ export default function Index() {
                 <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>
                   InvestStarts объединяет инвесторов и технологические команды в единой инвестиционной экосистеме.
                 </p>
-                <div style={{ display: "flex", gap: "0.9rem", flexShrink: 0 }}>
+                <div style={{ display: "flex", gap: "1.1rem", flexShrink: 0 }}>
                   <a href="#" className="transition-all duration-200"
-                    style={{ fontSize: "0.88rem", fontWeight: 400, letterSpacing: "0.05em", color: "rgba(255,255,255,0.72)", border: "1px solid rgba(255,255,255,0.22)", padding: "0.8rem 2.2rem", borderRadius: "2rem", whiteSpace: "nowrap" }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.5)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.72)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.22)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
+                    style={{ fontSize: "1rem", fontWeight: 400, letterSpacing: "0.06em", color: "rgba(255,255,255,0.78)", border: "1px solid rgba(255,255,255,0.25)", padding: "1.1rem 2.8rem", borderRadius: "3rem", whiteSpace: "nowrap" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.55)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.06)"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.78)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.25)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
                     Подать заявку
                   </a>
                   <a href="#" className="transition-all duration-200"
-                    style={{ fontSize: "0.88rem", fontWeight: 500, letterSpacing: "0.05em", color: "#fff", background: "#4f8ef7", padding: "0.8rem 2.2rem", borderRadius: "2rem", whiteSpace: "nowrap" }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#3a7ae0"; (e.currentTarget as HTMLElement).style.transform = "scale(1.02)"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#4f8ef7"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}>
+                    style={{ fontSize: "1rem", fontWeight: 600, letterSpacing: "0.06em", color: "#fff", background: "linear-gradient(135deg, #4f8ef7 0%, #2563eb 100%)", padding: "1.1rem 2.8rem", borderRadius: "3rem", whiteSpace: "nowrap", boxShadow: "0 0 24px rgba(79,142,247,0.45), inset 0 1px 0 rgba(255,255,255,0.15)" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 36px rgba(79,142,247,0.7), inset 0 1px 0 rgba(255,255,255,0.15)"; (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 24px rgba(79,142,247,0.45), inset 0 1px 0 rgba(255,255,255,0.15)"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}>
                     Стать инвестором
                   </a>
                 </div>
