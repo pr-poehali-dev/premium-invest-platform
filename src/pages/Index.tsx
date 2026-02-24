@@ -220,14 +220,14 @@ export default function Index() {
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
-  const CONTENT_DELAY = 2200;
+  const CONTENT_DELAY = 2200;  
 
   // Scramble для двух строк заголовка
   const line1 = useScramble("Инвестируйте в IT-стартапы,", showContent ? 300 : 99999);
   const line2 = useScramble("которые изменят будущее", showContent ? 700 : 99999);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden font-montserrat" style={{ background: "#07080b", cursor: "none" }}>
+    <div className="relative w-full font-montserrat" style={{ background: "#07080b", cursor: "none", height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column" }}>
       <Cursor />
       <Spotlight />
       <Particles />
@@ -260,10 +260,10 @@ export default function Index() {
       }} />
 
       {showContent && (
-        <div style={{ position: "relative", zIndex: 4 }}>
+        <div style={{ position: "relative", zIndex: 4, flex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
 
           {/* ── NAV ── */}
-          <nav className="flex items-center justify-between px-8 md:px-14 py-7" style={{ opacity: 1, transition: "opacity 0.6s ease" }}>
+          <nav className="flex items-center justify-between px-8 md:px-14 py-5" style={{ opacity: 1, transition: "opacity 0.6s ease", flexShrink: 0 }}>
             <Reveal delay={100}>
               <span className="text-sm font-semibold tracking-[0.22em] uppercase" style={{ color: "#e8eaf0" }}>
                 Invest<span style={{ color: "#4f8ef7" }}>Starts</span>
@@ -302,11 +302,11 @@ export default function Index() {
           </nav>
 
           {/* ── HERO ── */}
-          <div className="flex flex-col items-center text-center px-6 pt-8 pb-20">
+          <div className="flex flex-col items-center text-center px-6" style={{ flex: 1, justifyContent: "center", paddingTop: "0.5rem", paddingBottom: "1.5rem" }}>
 
             {/* Badge */}
             <Reveal delay={300}>
-              <div className="inline-flex items-center gap-2.5 text-xs font-light tracking-widest px-5 py-2 mb-14"
+              <div className="inline-flex items-center gap-2.5 text-xs font-light tracking-widest px-5 py-2 mb-8"
                 style={{ background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.16)", color: "rgba(255,255,255,0.4)", letterSpacing: "0.16em" }}>
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#4f8ef7" }} />
                 128 инвесторов на платформе
@@ -314,7 +314,7 @@ export default function Index() {
             </Reveal>
 
             {/* ── SCRAMBLE HEADLINE ── */}
-            <div className="max-w-5xl mb-16">
+            <div className="max-w-5xl mb-8">
               {/* Line 1 */}
               <div style={{
                 opacity: showContent ? 1 : 0,
@@ -359,7 +359,7 @@ export default function Index() {
 
             {/* ── STATS ROW ── */}
             <Reveal delay={900}>
-              <div className="flex items-center gap-12 mb-16">
+              <div className="flex items-center gap-12 mb-8">
                 {[
                   { value: 128, suffix: "", label: "инвесторов" },
                   { value: 47, suffix: "+", label: "стартапов отобрано" },
@@ -378,7 +378,7 @@ export default function Index() {
             </Reveal>
 
             {/* ── COLUMNS ── */}
-            <div className="w-full max-w-4xl mb-16">
+            <div className="w-full max-w-4xl mb-8">
               <HLine delay={1050} />
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
                 {[
@@ -387,7 +387,7 @@ export default function Index() {
                   { title: "Закрытая среда", text: "для сделок, аналитики и прямых контактов." },
                 ].map((col, i) => (
                   <Reveal key={col.title} delay={1100 + i * 90}>
-                    <div className="px-8 py-7 text-left" style={{ borderRight: i < 2 ? "1px solid rgba(255,255,255,0.06)" : undefined }}>
+                    <div className="px-8 py-4 text-left" style={{ borderRight: i < 2 ? "1px solid rgba(255,255,255,0.06)" : undefined }}>
                       <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "rgba(255,255,255,0.28)", letterSpacing: "0.18em" }}>
                         {col.title}
                       </p>
@@ -403,7 +403,7 @@ export default function Index() {
 
             {/* ── CTA ── */}
             <Reveal delay={1300}>
-              <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
+              <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
                 <a href="#" className="text-xs font-light tracking-widest uppercase px-9 py-3.5 transition-all duration-300"
                   style={{ color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.16)", letterSpacing: "0.14em", borderRadius: "2rem" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
