@@ -292,7 +292,7 @@ export default function Index() {
                   вход
                 </a>
                 <a href="#" className="text-xs font-medium tracking-wider uppercase px-5 py-2.5 transition-all duration-300"
-                  style={{ background: "#4f8ef7", color: "#fff", letterSpacing: "0.08em" }}
+                  style={{ background: "#4f8ef7", color: "#fff", letterSpacing: "0.08em", borderRadius: "2rem" }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#3a7ae0")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "#4f8ef7")}>
                   я стартап — продать проект
@@ -405,13 +405,13 @@ export default function Index() {
             <Reveal delay={1300}>
               <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
                 <a href="#" className="text-xs font-light tracking-widest uppercase px-9 py-3.5 transition-all duration-300"
-                  style={{ color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.16)", letterSpacing: "0.14em" }}
+                  style={{ color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.16)", letterSpacing: "0.14em", borderRadius: "2rem" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.16)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
                   подать заявку стартапу
                 </a>
                 <a href="#" className="text-xs font-medium tracking-widest uppercase px-9 py-3.5 transition-all duration-300"
-                  style={{ background: "#4f8ef7", color: "#fff", letterSpacing: "0.14em" }}
+                  style={{ background: "#4f8ef7", color: "#fff", letterSpacing: "0.14em", borderRadius: "2rem" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#3a7ae0"; (e.currentTarget as HTMLElement).style.transform = "scale(1.02)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#4f8ef7"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}>
                   стать инвестором
@@ -419,17 +419,34 @@ export default function Index() {
               </div>
             </Reveal>
 
-            {/* Trust */}
+            {/* Trust cards */}
             <Reveal delay={1450}>
-              <div className="flex items-center gap-8">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 {[
                   { icon: "Shield", text: "Предварительный отбор проектов" },
                   { icon: "Users", text: "Закрытое сообщество" },
                   { icon: "Zap", text: "Прямой доступ к сделкам" },
                 ].map((b) => (
-                  <div key={b.text} className="flex items-center gap-2">
-                    <Icon name={b.icon as "Shield"} size={13} style={{ color: "rgba(79,142,247,0.5)" }} />
-                    <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.26)", letterSpacing: "0.1em" }}>
+                  <div
+                    key={b.text}
+                    className="flex items-center gap-2.5 px-5 py-2.5 transition-all duration-300"
+                    style={{
+                      border: "1px solid rgba(79,142,247,0.18)",
+                      background: "rgba(79,142,247,0.05)",
+                      borderRadius: "2rem",
+                      cursor: "default",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.45)";
+                      (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.18)";
+                      (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.05)";
+                    }}
+                  >
+                    <Icon name={b.icon as "Shield"} size={13} style={{ color: "#4f8ef7" }} />
+                    <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.55)", letterSpacing: "0.1em" }}>
                       {b.text}
                     </span>
                   </div>
