@@ -265,18 +265,18 @@ export default function Index() {
           {/* ── NAV ── */}
           <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
             <Reveal delay={100}>
-              <span style={{ fontSize: "clamp(0.75rem, 1.1vw, 1rem)", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "#e8eaf0" }}>
+              <span style={{ fontSize: "0.95rem", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "#e8eaf0" }}>
                 Invest<span style={{ color: "#4f8ef7" }}>Starts</span>
               </span>
             </Reveal>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "clamp(1rem, 2.5vw, 2.5rem)" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
               {["стартапам", "как это работает", "преимущества", "отзывы", "faq"].map((item, i) => (
                 <Reveal key={item} delay={150 + i * 55}>
                   <a href="#" className="transition-colors duration-300"
-                    style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.75rem)", fontWeight: 300, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.32)" }}
-                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.75)")}
-                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.32)")}>
+                    style={{ fontSize: "0.75rem", fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.85)")}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)")}>
                     {item}
                   </a>
                 </Reveal>
@@ -284,15 +284,15 @@ export default function Index() {
             </div>
 
             <Reveal delay={200}>
-              <div style={{ display: "flex", alignItems: "center", gap: "clamp(0.75rem, 1.5vw, 1.5rem)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "1.2rem" }}>
                 <a href="#" className="transition-colors duration-300"
-                  style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.75rem)", fontWeight: 300, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.32)" }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.7)")}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.32)")}>
+                  style={{ fontSize: "0.75rem", fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.85)")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)")}>
                   вход
                 </a>
                 <a href="#" className="transition-all duration-300"
-                  style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.75rem)", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", background: "#4f8ef7", color: "#fff", padding: "clamp(0.45rem, 0.7vh, 0.7rem) clamp(0.9rem, 1.5vw, 1.5rem)", borderRadius: "2rem" }}
+                  style={{ fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", background: "#4f8ef7", color: "#fff", padding: "0.6rem 1.3rem", borderRadius: "2rem" }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#3a7ae0")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "#4f8ef7")}>
                   я стартап — продать проект
@@ -306,9 +306,9 @@ export default function Index() {
 
             {/* Badge */}
             <Reveal delay={280}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.16)", color: "rgba(255,255,255,0.4)", padding: "0.35rem 1rem", borderRadius: "2rem" }}>
-                <span className="animate-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "#4f8ef7", flexShrink: 0 }} />
-                <span style={{ fontSize: "0.72rem", fontWeight: 300, letterSpacing: "0.16em" }}>128 инвесторов на платформе</span>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.18)", color: "rgba(255,255,255,0.55)", padding: "0.45rem 1.1rem", borderRadius: "2rem" }}>
+                <span className="animate-pulse" style={{ width: 7, height: 7, borderRadius: "50%", background: "#4f8ef7", flexShrink: 0 }} />
+                <span style={{ fontSize: "0.82rem", fontWeight: 400, letterSpacing: "0.1em" }}>128 инвесторов на платформе</span>
               </div>
             </Reveal>
 
@@ -334,20 +334,20 @@ export default function Index() {
               <div style={{ display: "flex", gap: "clamp(1rem, 2vw, 2rem)", alignItems: "stretch" }}>
 
                 {/* Левая колонка */}
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "1rem", minWidth: "clamp(180px, 20vw, 280px)" }}>
-                  <p style={{ fontSize: "clamp(0.72rem, 0.9vw, 0.88rem)", fontWeight: 300, color: "rgba(255,255,255,0.48)", lineHeight: 1.75, margin: 0 }}>
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "1.2rem", width: "260px", flexShrink: 0 }}>
+                  <p style={{ fontSize: "0.9rem", fontWeight: 300, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, margin: 0 }}>
                     InvestStarts объединяет инвесторов и технологические команды в единой инвестиционной экосистеме.
                   </p>
-                  <div style={{ display: "flex", gap: "0.6rem" }}>
+                  <div style={{ display: "flex", gap: "0.7rem" }}>
                     <a href="#" className="transition-all duration-300"
-                      style={{ fontSize: "0.68rem", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.14)", padding: "0.6rem 1.3rem", borderRadius: "2rem" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.14)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
+                      style={{ fontSize: "0.78rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", border: "1px solid rgba(255,255,255,0.18)", padding: "0.7rem 1.5rem", borderRadius: "2rem" }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.45)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.65)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.18)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
                       подать заявку
                     </a>
                     <a href="#" className="transition-all duration-300"
-                      style={{ fontSize: "0.68rem", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff", background: "#4f8ef7", padding: "0.6rem 1.3rem", borderRadius: "2rem" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#3a7ae0"; (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; }}
+                      style={{ fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "#fff", background: "#4f8ef7", padding: "0.7rem 1.5rem", borderRadius: "2rem" }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#3a7ae0"; (e.currentTarget as HTMLElement).style.transform = "scale(1.02)"; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#4f8ef7"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}>
                       стать инвестором
                     </a>
@@ -355,7 +355,7 @@ export default function Index() {
                 </div>
 
                 {/* Карточки метрик */}
-                <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0.6rem" }}>
+                <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0.7rem" }}>
                   {[
                     { value: "750", label: "зарегистрированных\nинвесторов", blue: false },
                     { value: "10 млн ₽", label: "привлечено через\nплатформу", blue: true },
@@ -363,13 +363,13 @@ export default function Index() {
                     { value: "2%", label: "стартапов\nпроходят отбор", blue: false },
                   ].map((card) => (
                     <div key={card.label}
-                      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "0.75rem", padding: "1rem 1.1rem", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "0.5rem", transition: "border-color 0.3s, background 0.3s" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.3)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.05)"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.03)"; }}>
-                      <div style={{ fontSize: "clamp(1.2rem, 2vw, 2rem)", fontWeight: 300, color: card.blue ? "#4f8ef7" : "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
+                      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "0.75rem", padding: "1.1rem 1.2rem", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "0.6rem", transition: "border-color 0.3s, background 0.3s" }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.35)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.06)"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.03)"; }}>
+                      <div style={{ fontSize: "clamp(1.4rem, 2.2vw, 2.2rem)", fontWeight: 300, color: card.blue ? "#4f8ef7" : "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
                         {card.value}
                       </div>
-                      <div style={{ fontSize: "0.65rem", fontWeight: 300, color: "rgba(255,255,255,0.38)", lineHeight: 1.5, whiteSpace: "pre-line" }}>
+                      <div style={{ fontSize: "0.75rem", fontWeight: 300, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, whiteSpace: "pre-line" }}>
                         {card.label}
                       </div>
                     </div>
@@ -399,7 +399,7 @@ export default function Index() {
                         <div style={{ fontSize: "clamp(1.6rem, 2.4vw, 2.6rem)", fontWeight: 300, color: "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
                           <CountUp to={s.value} suffix={s.suffix} delay={1250 + i * 120} />
                         </div>
-                        <div style={{ marginTop: "0.45rem", fontSize: "0.68rem", color: "rgba(255,255,255,0.45)", letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 400 }}>
+                        <div style={{ marginTop: "0.4rem", fontSize: "0.75rem", color: "rgba(255,255,255,0.55)", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 400 }}>
                           {s.label}
                         </div>
                       </div>
