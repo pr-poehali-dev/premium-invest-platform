@@ -334,6 +334,9 @@ export default function Index() {
             </nav>
           </Reveal>
 
+          {/* Разделитель шапка / хиро */}
+          <div style={{ height: "1px", background: "linear-gradient(90deg, transparent 0%, rgba(79,142,247,0.6) 30%, rgba(79,142,247,0.9) 50%, rgba(79,142,247,0.6) 70%, transparent 100%)", margin: "0.8rem 0", flexShrink: 0, boxShadow: "0 0 8px rgba(79,142,247,0.5)" }} />
+
           {/* ── ЦЕНТР: единый поток без разрывов ── */}
           <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "2vh" }}>
 
@@ -432,7 +435,9 @@ export default function Index() {
         </div>
       )}
 
-      <div className="absolute bottom-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(79,142,247,0.2), transparent)", zIndex: 2 }} />
+      {/* Нижнее синее свечение */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{ height: "180px", background: "radial-gradient(ellipse 70% 100% at 50% 100%, rgba(79,142,247,0.18) 0%, transparent 75%)", zIndex: 2 }} />
+      <div className="absolute bottom-0 left-0 right-0 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(79,142,247,0.7) 30%, rgba(79,142,247,1) 50%, rgba(79,142,247,0.7) 70%, transparent 100%)", boxShadow: "0 0 12px rgba(79,142,247,0.6)", zIndex: 3 }} />
     </div>
   );
 }
