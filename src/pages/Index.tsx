@@ -301,53 +301,52 @@ export default function Index() {
             </Reveal>
           </nav>
 
-          {/* ── ОСНОВНОЙ БЛОК ── */}
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", paddingTop: "clamp(1rem, 2.5vh, 2.5rem)" }}>
+          {/* ── ОСНОВНОЙ БЛОК — весь контент единым потоком по центру ── */}
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "clamp(1.2rem, 2.5vh, 2.5rem)" }}>
 
-            {/* Верх: badge + заголовок */}
+            {/* Badge */}
+            <Reveal delay={280}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.16)", color: "rgba(255,255,255,0.4)", padding: "0.35rem 1rem", borderRadius: "2rem" }}>
+                <span className="animate-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "#4f8ef7", flexShrink: 0 }} />
+                <span style={{ fontSize: "0.72rem", fontWeight: 300, letterSpacing: "0.16em" }}>128 инвесторов на платформе</span>
+              </div>
+            </Reveal>
+
+            {/* Заголовок */}
             <div>
-              <Reveal delay={280}>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.16)", color: "rgba(255,255,255,0.4)", padding: "0.35rem 1rem", borderRadius: "2rem", marginBottom: "clamp(0.6rem, 1.5vh, 1.5rem)" }}>
-                  <span className="animate-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "#4f8ef7", flexShrink: 0 }} />
-                  <span style={{ fontSize: "0.72rem", fontWeight: 300, letterSpacing: "0.16em" }}>128 инвесторов на платформе</span>
-                </div>
-              </Reveal>
-
-              <div style={{ marginBottom: "clamp(1.2rem, 3vh, 3vh)" }}>
-                <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.3s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s" }}>
-                  <h1 style={{ fontSize: "clamp(2.4rem, 6.5vw, 6.5rem)", fontWeight: 200, color: "rgba(228,231,242,0.9)", letterSpacing: "-0.01em", lineHeight: 1.05, margin: 0, fontFamily: "Montserrat, sans-serif" }}>
-                    {line1.display}
+              <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.3s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s" }}>
+                <h1 style={{ fontSize: "clamp(2.4rem, 6vw, 6rem)", fontWeight: 200, color: "rgba(228,231,242,0.9)", letterSpacing: "-0.01em", lineHeight: 1.05, margin: 0, fontFamily: "Montserrat, sans-serif" }}>
+                  {line1.display}
+                </h1>
+              </div>
+              <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.52s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.52s" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                  <Icon name="ArrowUpRight" style={{ color: "#4f8ef7", flexShrink: 0, width: "clamp(1.8rem, 4vw, 4rem)", height: "clamp(1.8rem, 4vw, 4rem)" }} />
+                  <h1 style={{ fontSize: "clamp(2.4rem, 6vw, 6rem)", fontWeight: 200, color: "#4f8ef7", letterSpacing: "-0.01em", lineHeight: 1.05, margin: 0, fontFamily: "Montserrat, sans-serif" }}>
+                    {line2.display}
                   </h1>
-                </div>
-                <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.52s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.52s" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <Icon name="ArrowUpRight" style={{ color: "#4f8ef7", flexShrink: 0, width: "clamp(2rem, 4.5vw, 4.5rem)", height: "clamp(2rem, 4.5vw, 4.5rem)" }} />
-                    <h1 style={{ fontSize: "clamp(2.4rem, 6.5vw, 6.5rem)", fontWeight: 200, color: "#4f8ef7", letterSpacing: "-0.01em", lineHeight: 1.05, margin: 0, fontFamily: "Montserrat, sans-serif" }}>
-                      {line2.display}
-                    </h1>
-                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Середина: описание + карточки-метрики */}
+            {/* Описание + кнопки + карточки */}
             <Reveal delay={700}>
               <div style={{ display: "flex", gap: "clamp(1rem, 2vw, 2rem)", alignItems: "stretch" }}>
 
-                {/* Левая колонка: текст + кнопки */}
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minWidth: "clamp(200px, 22vw, 320px)" }}>
-                  <p style={{ fontSize: "clamp(0.72rem, 0.95vw, 0.92rem)", fontWeight: 300, color: "rgba(255,255,255,0.5)", lineHeight: 1.75, margin: "0 0 1.2rem" }}>
+                {/* Левая колонка */}
+                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "1rem", minWidth: "clamp(180px, 20vw, 280px)" }}>
+                  <p style={{ fontSize: "clamp(0.72rem, 0.9vw, 0.88rem)", fontWeight: 300, color: "rgba(255,255,255,0.48)", lineHeight: 1.75, margin: 0 }}>
                     InvestStarts объединяет инвесторов и технологические команды в единой инвестиционной экосистеме.
                   </p>
-                  <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
+                  <div style={{ display: "flex", gap: "0.6rem" }}>
                     <a href="#" className="transition-all duration-300"
-                      style={{ fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.14)", padding: "0.65rem 1.4rem", borderRadius: "2rem" }}
+                      style={{ fontSize: "0.68rem", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.14)", padding: "0.6rem 1.3rem", borderRadius: "2rem" }}
                       onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.14)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
                       подать заявку
                     </a>
                     <a href="#" className="transition-all duration-300"
-                      style={{ fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff", background: "#4f8ef7", padding: "0.65rem 1.4rem", borderRadius: "2rem" }}
+                      style={{ fontSize: "0.68rem", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff", background: "#4f8ef7", padding: "0.6rem 1.3rem", borderRadius: "2rem" }}
                       onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#3a7ae0"; (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#4f8ef7"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}>
                       стать инвестором
@@ -355,21 +354,22 @@ export default function Index() {
                   </div>
                 </div>
 
-                {/* Карточки с метриками */}
-                <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "clamp(0.5rem, 1vw, 0.8rem)" }}>
+                {/* Карточки метрик */}
+                <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0.6rem" }}>
                   {[
                     { value: "750", label: "зарегистрированных\nинвесторов", blue: false },
                     { value: "10 млн ₽", label: "привлечено через\nплатформу", blue: true },
                     { value: "14", label: "проектов привлекли\nинвестиции", blue: false },
                     { value: "2%", label: "стартапов\nпроходят отбор", blue: false },
                   ].map((card) => (
-                    <div key={card.label} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "0.75rem", padding: "clamp(0.8rem, 1.5vh, 1.4rem) clamp(0.8rem, 1.2vw, 1.2rem)", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "0.5rem", transition: "border-color 0.3s, background 0.3s" }}
+                    <div key={card.label}
+                      style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "0.75rem", padding: "1rem 1.1rem", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "0.5rem", transition: "border-color 0.3s, background 0.3s" }}
                       onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.3)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.05)"; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.03)"; }}>
-                      <div style={{ fontSize: "clamp(1.3rem, 2.2vw, 2.2rem)", fontWeight: 300, color: card.blue ? "#4f8ef7" : "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
+                      <div style={{ fontSize: "clamp(1.2rem, 2vw, 2rem)", fontWeight: 300, color: card.blue ? "#4f8ef7" : "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
                         {card.value}
                       </div>
-                      <div style={{ fontSize: "clamp(0.6rem, 0.72vw, 0.72rem)", fontWeight: 300, color: "rgba(255,255,255,0.38)", lineHeight: 1.5, whiteSpace: "pre-line" }}>
+                      <div style={{ fontSize: "0.65rem", fontWeight: 300, color: "rgba(255,255,255,0.38)", lineHeight: 1.5, whiteSpace: "pre-line" }}>
                         {card.label}
                       </div>
                     </div>
@@ -378,6 +378,7 @@ export default function Index() {
 
               </div>
             </Reveal>
+
           </div>
 
           {/* ── НИЖНЯЯ ПОЛОСА ── */}
