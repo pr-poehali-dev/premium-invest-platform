@@ -260,21 +260,21 @@ export default function Index() {
       }} />
 
       {showContent && (
-        <div style={{ position: "relative", zIndex: 4, flex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
+        <div style={{ position: "relative", zIndex: 4, flex: 1, display: "flex", flexDirection: "column", padding: "20px", boxSizing: "border-box" }}>
 
           {/* ── NAV ── */}
-          <nav className="flex items-center justify-between px-8 md:px-14 py-5" style={{ opacity: 1, transition: "opacity 0.6s ease", flexShrink: 0 }}>
+          <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0, marginBottom: "auto" }}>
             <Reveal delay={100}>
-              <span className="text-sm font-semibold tracking-[0.22em] uppercase" style={{ color: "#e8eaf0" }}>
+              <span style={{ fontSize: "clamp(0.75rem, 1.1vw, 1rem)", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "#e8eaf0" }}>
                 Invest<span style={{ color: "#4f8ef7" }}>Starts</span>
               </span>
             </Reveal>
 
-            <div className="hidden md:flex items-center gap-9">
+            <div style={{ display: "flex", alignItems: "center", gap: "clamp(1rem, 2.5vw, 2.5rem)" }}>
               {["стартапам", "как это работает", "преимущества", "отзывы", "faq"].map((item, i) => (
                 <Reveal key={item} delay={150 + i * 55}>
-                  <a href="#" className="text-xs font-light tracking-widest uppercase transition-colors duration-300"
-                    style={{ color: "rgba(255,255,255,0.32)", letterSpacing: "0.14em" }}
+                  <a href="#" className="transition-colors duration-300"
+                    style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.75rem)", fontWeight: 300, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.32)" }}
                     onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.75)")}
                     onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.32)")}>
                     {item}
@@ -284,15 +284,15 @@ export default function Index() {
             </div>
 
             <Reveal delay={200}>
-              <div className="flex items-center gap-5">
-                <a href="#" className="text-xs font-light tracking-widest uppercase transition-colors duration-300"
-                  style={{ color: "rgba(255,255,255,0.32)", letterSpacing: "0.14em" }}
+              <div style={{ display: "flex", alignItems: "center", gap: "clamp(0.75rem, 1.5vw, 1.5rem)" }}>
+                <a href="#" className="transition-colors duration-300"
+                  style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.75rem)", fontWeight: 300, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.32)" }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.7)")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.32)")}>
                   вход
                 </a>
-                <a href="#" className="text-xs font-medium tracking-wider uppercase px-5 py-2.5 transition-all duration-300"
-                  style={{ background: "#4f8ef7", color: "#fff", letterSpacing: "0.08em", borderRadius: "2rem" }}
+                <a href="#" className="transition-all duration-300"
+                  style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.75rem)", fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", background: "#4f8ef7", color: "#fff", padding: "clamp(0.45rem, 0.7vh, 0.7rem) clamp(0.9rem, 1.5vw, 1.5rem)", borderRadius: "2rem" }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#3a7ae0")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "#4f8ef7")}>
                   я стартап — продать проект
@@ -301,129 +301,118 @@ export default function Index() {
             </Reveal>
           </nav>
 
-          {/* ── HERO ── */}
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "0 3.5rem 2.5rem" }}>
+          {/* ── ЗАГОЛОВОК — центр тяжести ── */}
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
-            {/* ── CENTER: заголовок — главный герой ── */}
-            <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center" }}>
+            <Reveal delay={280}>
+              <div className="inline-flex items-center gap-2"
+                style={{ background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.16)", color: "rgba(255,255,255,0.4)", padding: "clamp(0.3rem, 0.5vh, 0.5rem) clamp(0.8rem, 1.2vw, 1.2rem)", borderRadius: "2rem", marginBottom: "clamp(1rem, 2.5vh, 2.5rem)", display: "inline-flex" }}>
+                <span className="animate-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "#4f8ef7", flexShrink: 0 }} />
+                <span style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.72rem)", fontWeight: 300, letterSpacing: "0.16em" }}>128 инвесторов на платформе</span>
+              </div>
+            </Reveal>
 
-              {/* Badge */}
-              <Reveal delay={300}>
-                <div className="inline-flex items-center gap-2.5 text-xs font-light tracking-widest px-4 py-1.5 mb-10"
-                  style={{ background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.16)", color: "rgba(255,255,255,0.4)", letterSpacing: "0.16em", borderRadius: "2rem" }}>
-                  <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#4f8ef7" }} />
-                  128 инвесторов на платформе
-                </div>
-              </Reveal>
-
-              {/* ── ОГРОМНЫЙ ЗАГОЛОВОК ── */}
-              <div style={{ marginBottom: "2.5rem" }}>
-                <div style={{
-                  opacity: showContent ? 1 : 0,
-                  transform: showContent ? "translateY(0)" : "translateY(20px)",
-                  transition: "opacity 0.6s ease 0.3s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s",
+            <div style={{ marginBottom: "clamp(1.5rem, 3vh, 3rem)" }}>
+              <div style={{
+                opacity: showContent ? 1 : 0,
+                transform: showContent ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.6s ease 0.3s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s",
+              }}>
+                <h1 style={{
+                  fontSize: "clamp(2.4rem, 6.5vw, 6.5rem)",
+                  fontWeight: 200,
+                  color: "rgba(228,231,242,0.9)",
+                  letterSpacing: "-0.01em",
+                  lineHeight: 1.05,
+                  margin: 0,
+                  fontFamily: "Montserrat, sans-serif",
                 }}>
+                  {line1.display}
+                </h1>
+              </div>
+              <div style={{
+                opacity: showContent ? 1 : 0,
+                transform: showContent ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.6s ease 0.52s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.52s",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <Icon name="ArrowUpRight" style={{ color: "#4f8ef7", flexShrink: 0, width: "clamp(2rem, 4.5vw, 4.5rem)", height: "clamp(2rem, 4.5vw, 4.5rem)" }} />
                   <h1 style={{
-                    fontSize: "clamp(3.2rem, 7.5vw, 7rem)",
+                    fontSize: "clamp(2.4rem, 6.5vw, 6.5rem)",
                     fontWeight: 200,
-                    color: "rgba(228,231,242,0.9)",
+                    color: "#4f8ef7",
                     letterSpacing: "-0.01em",
                     lineHeight: 1.05,
                     margin: 0,
                     fontFamily: "Montserrat, sans-serif",
                   }}>
-                    {line1.display}
+                    {line2.display}
                   </h1>
                 </div>
+              </div>
+            </div>
 
-                <div style={{
-                  opacity: showContent ? 1 : 0,
-                  transform: showContent ? "translateY(0)" : "translateY(20px)",
-                  transition: "opacity 0.6s ease 0.55s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s",
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                    <Icon name="ArrowUpRight" size={52} style={{ color: "#4f8ef7", flexShrink: 0, marginTop: "4px" }} />
-                    <h1 style={{
-                      fontSize: "clamp(3.2rem, 7.5vw, 7rem)",
-                      fontWeight: 200,
-                      color: "#4f8ef7",
-                      letterSpacing: "-0.01em",
-                      lineHeight: 1.05,
-                      margin: 0,
-                      fontFamily: "Montserrat, sans-serif",
-                    }}>
-                      {line2.display}
-                    </h1>
-                  </div>
+            <Reveal delay={850}>
+              <div style={{ display: "flex", alignItems: "center", gap: "clamp(1.5rem, 3vw, 4rem)" }}>
+                <p style={{ fontSize: "clamp(0.7rem, 0.95vw, 0.9rem)", fontWeight: 300, color: "rgba(255,255,255,0.38)", letterSpacing: "0.04em", lineHeight: 1.7, maxWidth: "min(360px, 28vw)", margin: 0 }}>
+                  Инвестиционная платформа с предварительным отбором проектов. Demo Day для знакомства. Закрытая среда для сделок.
+                </p>
+                <div style={{ display: "flex", gap: "clamp(0.5rem, 1vw, 0.75rem)", flexShrink: 0 }}>
+                  <a href="#" className="transition-all duration-300"
+                    style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.72rem)", fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.14)", padding: "clamp(0.55rem, 0.9vh, 0.85rem) clamp(1.2rem, 2vw, 2rem)", borderRadius: "2rem" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.38)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.14)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
+                    подать заявку
+                  </a>
+                  <a href="#" className="transition-all duration-300"
+                    style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.72rem)", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff", background: "#4f8ef7", padding: "clamp(0.55rem, 0.9vh, 0.85rem) clamp(1.2rem, 2vw, 2rem)", borderRadius: "2rem" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#3a7ae0"; (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#4f8ef7"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}>
+                    стать инвестором
+                  </a>
                 </div>
               </div>
+            </Reveal>
+          </div>
 
-              {/* Подзаголовок + CTA в одной строке */}
-              <Reveal delay={900}>
-                <div style={{ display: "flex", alignItems: "center", gap: "3rem" }}>
-                  <p style={{ fontSize: "0.85rem", fontWeight: 300, color: "rgba(255,255,255,0.38)", letterSpacing: "0.06em", lineHeight: 1.7, maxWidth: "360px", margin: 0 }}>
-                    InvestStarts — инвестиционная платформа с предварительным отбором проектов. Demo Day для знакомства. Закрытая среда для сделок.
-                  </p>
-                  <div style={{ display: "flex", gap: "0.75rem", flexShrink: 0 }}>
-                    <a href="#" className="transition-all duration-300"
-                      style={{ fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.14)", padding: "0.75rem 1.8rem", borderRadius: "2rem" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.38)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.14)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
-                      подать заявку
-                    </a>
-                    <a href="#" className="transition-all duration-300"
-                      style={{ fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff", background: "#4f8ef7", padding: "0.75rem 1.8rem", borderRadius: "2rem" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#3a7ae0"; (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "#4f8ef7"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}>
-                      стать инвестором
-                    </a>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-
-            {/* ── НИЖНЯЯ ПОЛОСА: статы + trust ── */}
-            <div>
-              <HLine delay={1100} />
-              <Reveal delay={1200}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: "1.25rem" }}>
-                  {/* Статы */}
-                  <div style={{ display: "flex", gap: "3rem" }}>
-                    {[
-                      { value: 128, suffix: "", label: "инвесторов" },
-                      { value: 47, suffix: "+", label: "стартапов отобрано" },
-                      { value: 3, suffix: "", label: "Demo Day проведено" },
-                    ].map((s, i) => (
-                      <div key={s.label}>
-                        <div style={{ fontSize: "1.6rem", fontWeight: 300, color: "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
-                          <CountUp to={s.value} suffix={s.suffix} delay={1250 + i * 120} />
-                        </div>
-                        <div style={{ marginTop: "0.3rem", fontSize: "0.6rem", color: "rgba(255,255,255,0.25)", letterSpacing: "0.16em", textTransform: "uppercase" }}>
-                          {s.label}
-                        </div>
+          {/* ── НИЖНЯЯ ПОЛОСА ── */}
+          <div style={{ flexShrink: 0 }}>
+            <HLine delay={1100} />
+            <Reveal delay={1200}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: "clamp(0.6rem, 1.2vh, 1.2rem)" }}>
+                <div style={{ display: "flex", gap: "clamp(1.5rem, 3vw, 3.5rem)" }}>
+                  {[
+                    { value: 128, suffix: "", label: "инвесторов" },
+                    { value: 47, suffix: "+", label: "стартапов отобрано" },
+                    { value: 3, suffix: "", label: "Demo Day проведено" },
+                  ].map((s, i) => (
+                    <div key={s.label}>
+                      <div style={{ fontSize: "clamp(1.1rem, 2vw, 1.8rem)", fontWeight: 300, color: "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
+                        <CountUp to={s.value} suffix={s.suffix} delay={1250 + i * 120} />
                       </div>
-                    ))}
-                  </div>
-
-                  {/* Trust pills */}
-                  <div style={{ display: "flex", gap: "0.6rem" }}>
-                    {[
-                      { icon: "Shield", text: "Отбор проектов" },
-                      { icon: "Users", text: "Закрытое сообщество" },
-                      { icon: "Zap", text: "Прямые сделки" },
-                    ].map((b) => (
-                      <div key={b.text} className="transition-all duration-300"
-                        style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.45rem 1rem", border: "1px solid rgba(79,142,247,0.16)", background: "rgba(79,142,247,0.04)", borderRadius: "2rem", cursor: "default" }}
-                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.4)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.09)"; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.16)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.04)"; }}>
-                        <Icon name={b.icon as "Shield"} size={11} style={{ color: "#4f8ef7" }} />
-                        <span style={{ fontSize: "0.6rem", fontWeight: 300, color: "rgba(255,255,255,0.45)", letterSpacing: "0.1em" }}>{b.text}</span>
+                      <div style={{ marginTop: "0.3rem", fontSize: "clamp(0.5rem, 0.65vw, 0.65rem)", color: "rgba(255,255,255,0.25)", letterSpacing: "0.16em", textTransform: "uppercase" }}>
+                        {s.label}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
-              </Reveal>
-            </div>
+                <div style={{ display: "flex", gap: "clamp(0.4rem, 0.7vw, 0.7rem)" }}>
+                  {[
+                    { icon: "Shield", text: "Отбор проектов" },
+                    { icon: "Users", text: "Закрытое сообщество" },
+                    { icon: "Zap", text: "Прямые сделки" },
+                  ].map((b) => (
+                    <div key={b.text} className="transition-all duration-300"
+                      style={{ display: "flex", alignItems: "center", gap: "0.4rem", padding: "clamp(0.3rem, 0.5vh, 0.5rem) clamp(0.7rem, 1.1vw, 1.1rem)", border: "1px solid rgba(79,142,247,0.16)", background: "rgba(79,142,247,0.04)", borderRadius: "2rem", cursor: "default" }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.4)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.09)"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.16)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.04)"; }}>
+                      <Icon name={b.icon as "Shield"} size={11} style={{ color: "#4f8ef7" }} />
+                      <span style={{ fontSize: "clamp(0.5rem, 0.65vw, 0.65rem)", fontWeight: 300, color: "rgba(255,255,255,0.45)", letterSpacing: "0.1em" }}>{b.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       )}
