@@ -396,10 +396,10 @@ export default function Index() {
                   ].map((s, i) => (
                     <div key={s.label} style={{ display: "flex", alignItems: "stretch" }}>
                       <div style={{ paddingRight: i < 3 ? "2.8rem" : "0", paddingLeft: i === 0 ? "0" : "2.8rem" }}>
-                        <div style={{ fontSize: "2.2rem", fontWeight: 300, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1 }}>
+                        <div style={{ fontSize: "3.2rem", fontWeight: 300, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1 }}>
                           <CountUp to={s.value} suffix={s.suffix} delay={1150 + i * 100} />
                         </div>
-                        <div style={{ marginTop: "0.35rem", fontSize: "0.82rem", fontWeight: 300, color: "rgba(255,255,255,0.5)", lineHeight: 1.4 }}>
+                        <div style={{ marginTop: "0.4rem", fontSize: "0.9rem", fontWeight: 300, color: "rgba(255,255,255,0.5)", lineHeight: 1.4 }}>
                           {s.label}
                         </div>
                       </div>
