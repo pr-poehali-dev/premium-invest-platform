@@ -381,45 +381,42 @@ export default function Index() {
             <Reveal delay={1200}>
               <div style={{ display: "flex", alignItems: "stretch", justifyContent: "space-between", paddingTop: "clamp(0.8rem, 1.4vh, 1.4rem)", gap: "2rem" }}>
 
-                {/* Статы — с вертикальными разделителями */}
-                <div style={{ display: "flex", gap: "0" }}>
+                {/* Статы */}
+                <div style={{ display: "flex", gap: "0", alignItems: "stretch" }}>
                   {[
                     { value: 128, suffix: "", label: "Инвесторов на платформе" },
                     { value: 47, suffix: "+", label: "Стартапов прошли отбор" },
                     { value: 3, suffix: "", label: "Demo Day проведено" },
                   ].map((s, i) => (
                     <div key={s.label} style={{ display: "flex", alignItems: "stretch" }}>
-                      <div style={{ paddingRight: "clamp(1.5rem, 2.5vw, 3rem)", paddingLeft: i === 0 ? 0 : "clamp(1.5rem, 2.5vw, 3rem)" }}>
-                        <div style={{ fontSize: "clamp(1.4rem, 2.2vw, 2.2rem)", fontWeight: 300, color: "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
+                      <div style={{ paddingRight: "2.5rem", paddingLeft: i === 0 ? 0 : "2.5rem" }}>
+                        <div style={{ fontSize: "clamp(1.6rem, 2.4vw, 2.6rem)", fontWeight: 300, color: "#fff", letterSpacing: "-0.02em", lineHeight: 1 }}>
                           <CountUp to={s.value} suffix={s.suffix} delay={1250 + i * 120} />
                         </div>
-                        <div style={{ marginTop: "0.4rem", fontSize: "clamp(0.55rem, 0.7vw, 0.7rem)", color: "rgba(255,255,255,0.35)", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 400 }}>
+                        <div style={{ marginTop: "0.45rem", fontSize: "0.68rem", color: "rgba(255,255,255,0.45)", letterSpacing: "0.14em", textTransform: "uppercase", fontWeight: 400 }}>
                           {s.label}
                         </div>
                       </div>
                       {i < 2 && (
-                        <div style={{ width: "1px", background: "rgba(255,255,255,0.08)", flexShrink: 0, alignSelf: "stretch" }} />
+                        <div style={{ width: "1px", background: "rgba(255,255,255,0.1)", flexShrink: 0 }} />
                       )}
                     </div>
                   ))}
                 </div>
 
-                {/* Trust — вертикальный стек */}
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "clamp(0.35rem, 0.6vh, 0.6rem)" }}>
+                {/* Trust — горизонтальный ряд pill-карточек */}
+                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
                   {[
-                    { icon: "Shield", title: "Отбор проектов", sub: "Только проверенные стартапы" },
-                    { icon: "Users", title: "Закрытое сообщество", sub: "Доступ по приглашению" },
-                    { icon: "Zap", title: "Прямые сделки", sub: "Без посредников" },
+                    { icon: "Shield", text: "Отбор проектов" },
+                    { icon: "Users", text: "Закрытое сообщество" },
+                    { icon: "Zap", text: "Прямые сделки" },
                   ].map((b) => (
-                    <div key={b.title} className="transition-all duration-300"
-                      style={{ display: "flex", alignItems: "center", gap: "clamp(0.6rem, 1vw, 1rem)", padding: "clamp(0.4rem, 0.65vh, 0.65rem) clamp(0.8rem, 1.2vw, 1.2rem)", border: "1px solid rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.025)", borderRadius: "0.4rem", cursor: "default" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.35)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.07)"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.025)"; }}>
-                      <Icon name={b.icon as "Shield"} size={13} style={{ color: "#4f8ef7", flexShrink: 0 }} />
-                      <div>
-                        <div style={{ fontSize: "clamp(0.58rem, 0.72vw, 0.72rem)", fontWeight: 500, color: "rgba(255,255,255,0.75)", letterSpacing: "0.06em" }}>{b.title}</div>
-                        <div style={{ fontSize: "clamp(0.5rem, 0.62vw, 0.62rem)", fontWeight: 300, color: "rgba(255,255,255,0.3)", letterSpacing: "0.08em", marginTop: "0.1rem" }}>{b.sub}</div>
-                      </div>
+                    <div key={b.text} className="transition-all duration-300"
+                      style={{ display: "flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 1.1rem", border: "1px solid rgba(79,142,247,0.22)", background: "rgba(79,142,247,0.06)", borderRadius: "2rem", cursor: "default", whiteSpace: "nowrap" }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.55)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.13)"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(79,142,247,0.22)"; (e.currentTarget as HTMLElement).style.background = "rgba(79,142,247,0.06)"; }}>
+                      <Icon name={b.icon as "Shield"} size={14} style={{ color: "#4f8ef7", flexShrink: 0 }} />
+                      <span style={{ fontSize: "0.72rem", fontWeight: 400, color: "rgba(255,255,255,0.7)", letterSpacing: "0.08em" }}>{b.text}</span>
                     </div>
                   ))}
                 </div>
