@@ -298,39 +298,38 @@ export default function Index() {
             </nav>
           </Reveal>
 
-          {/* ── ЦЕНТР: всё между навбаром и нижней полосой ── */}
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", paddingTop: "3vh", paddingBottom: "2.5vh" }}>
+          {/* ── ЦЕНТР: единый поток без разрывов ── */}
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "2vh" }}>
 
-            {/* Верх: badge + огромный заголовок */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
-              <Reveal delay={300}>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "rgba(79,142,247,0.07)", border: "1px solid rgba(79,142,247,0.2)", padding: "0.45rem 1.2rem", borderRadius: "2rem" }}>
-                  <span className="animate-pulse" style={{ width: 7, height: 7, borderRadius: "50%", background: "#4f8ef7", flexShrink: 0 }} />
-                  <span style={{ fontSize: "0.85rem", fontWeight: 400, color: "rgba(255,255,255,0.65)", letterSpacing: "0.05em" }}>128 инвесторов на платформе</span>
-                </div>
-              </Reveal>
+            {/* Badge */}
+            <Reveal delay={300}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "rgba(79,142,247,0.07)", border: "1px solid rgba(79,142,247,0.2)", padding: "0.45rem 1.2rem", borderRadius: "2rem" }}>
+                <span className="animate-pulse" style={{ width: 7, height: 7, borderRadius: "50%", background: "#4f8ef7", flexShrink: 0 }} />
+                <span style={{ fontSize: "0.85rem", fontWeight: 400, color: "rgba(255,255,255,0.65)", letterSpacing: "0.05em" }}>128 инвесторов на платформе</span>
+              </div>
+            </Reveal>
 
-              <div>
-                <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.3s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s" }}>
-                  <h1 style={{ fontSize: "clamp(2.8rem, 6.2vw, 6.5rem)", fontWeight: 200, color: "rgba(228,231,242,0.92)", letterSpacing: "-0.02em", lineHeight: 1.05, margin: 0, fontFamily: "Montserrat, sans-serif" }}>
-                    {line1.display}
+            {/* Заголовок на всю ширину */}
+            <div style={{ margin: "0 -4px" }}>
+              <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.3s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s" }}>
+                <h1 style={{ fontSize: "9.6vw", fontWeight: 200, color: "rgba(228,231,242,0.92)", letterSpacing: "-0.02em", lineHeight: 1.0, margin: 0, fontFamily: "Montserrat, sans-serif", whiteSpace: "nowrap" }}>
+                  {line1.display}
+                </h1>
+              </div>
+              <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.52s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.52s" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
+                  <Icon name="ArrowUpRight" style={{ color: "#4f8ef7", flexShrink: 0, width: "9vw", height: "9vw", minWidth: "2rem", minHeight: "2rem" }} />
+                  <h1 style={{ fontSize: "9.6vw", fontWeight: 200, color: "#4f8ef7", letterSpacing: "-0.02em", lineHeight: 1.0, margin: 0, fontFamily: "Montserrat, sans-serif", whiteSpace: "nowrap" }}>
+                    {line2.display}
                   </h1>
-                </div>
-                <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.52s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.52s" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                    <Icon name="ArrowUpRight" style={{ color: "#4f8ef7", flexShrink: 0, width: "clamp(2.2rem, 4.2vw, 4.5rem)", height: "clamp(2.2rem, 4.2vw, 4.5rem)" }} />
-                    <h1 style={{ fontSize: "clamp(2.8rem, 6.2vw, 6.5rem)", fontWeight: 200, color: "#4f8ef7", letterSpacing: "-0.02em", lineHeight: 1.05, margin: 0, fontFamily: "Montserrat, sans-serif" }}>
-                      {line2.display}
-                    </h1>
-                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Низ центра: описание + кнопки */}
+            {/* Описание + кнопки сразу под заголовком */}
             <Reveal delay={750}>
-              <div style={{ display: "flex", alignItems: "center", gap: "3.5rem" }}>
-                <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, margin: 0, maxWidth: "460px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "3rem", paddingTop: "0.5vh" }}>
+                <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>
                   InvestStarts объединяет инвесторов и технологические команды в единой инвестиционной экосистеме.
                 </p>
                 <div style={{ display: "flex", gap: "0.9rem", flexShrink: 0 }}>
