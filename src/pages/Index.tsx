@@ -188,6 +188,42 @@ function HLine({ delay = 0 }: { delay?: number }) {
   );
 }
 
+/* ─── FitText — автоскейл шрифта под ширину контейнера ─── */
+function FitText({ children, fontWeight = 200, color = "rgba(228,231,242,0.92)", style }: {
+  children: string; fontWeight?: number; color?: string; style?: React.CSSProperties;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [fontSize, setFontSize] = useState(120);
+
+  const fit = useCallback(() => {
+    const el = ref.current;
+    if (!el) return;
+    const parent = el.parentElement;
+    if (!parent) return;
+    const available = parent.offsetWidth;
+    el.style.fontSize = "120px";
+    el.style.whiteSpace = "nowrap";
+    const natural = el.scrollWidth;
+    if (natural > 0) setFontSize(120 * (available / natural));
+  }, []);
+
+  useEffect(() => {
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, [fit, children]);
+
+  return (
+    <div ref={ref} style={{
+      fontSize, fontWeight, color, letterSpacing: "-0.02em", lineHeight: 1.0,
+      margin: 0, fontFamily: "Montserrat, sans-serif", whiteSpace: "nowrap",
+      ...style,
+    }}>
+      {children}
+    </div>
+  );
+}
+
 /* ─── Counting number ─── */
 function CountUp({ to, suffix = "", duration = 1600, delay = 0 }: { to: number; suffix?: string; duration?: number; delay?: number }) {
   const [val, setVal] = useState(0);
@@ -309,20 +345,13 @@ export default function Index() {
               </div>
             </Reveal>
 
-            {/* Заголовок на всю ширину */}
-            <div style={{ margin: "0 -4px" }}>
+            {/* Заголовок — автоскейл под ширину экрана */}
+            <div style={{ overflow: "hidden" }}>
               <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.3s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s" }}>
-                <h1 style={{ fontSize: "9.6vw", fontWeight: 200, color: "rgba(228,231,242,0.92)", letterSpacing: "-0.02em", lineHeight: 1.0, margin: 0, fontFamily: "Montserrat, sans-serif", whiteSpace: "nowrap" }}>
-                  {line1.display}
-                </h1>
+                <FitText fontWeight={200} color="rgba(228,231,242,0.92)">{line1.display}</FitText>
               </div>
               <div style={{ opacity: showContent ? 1 : 0, transform: showContent ? "translateY(0)" : "translateY(20px)", transition: "opacity 0.6s ease 0.52s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.52s" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
-                  <Icon name="ArrowUpRight" style={{ color: "#4f8ef7", flexShrink: 0, width: "9vw", height: "9vw", minWidth: "2rem", minHeight: "2rem" }} />
-                  <h1 style={{ fontSize: "9.6vw", fontWeight: 200, color: "#4f8ef7", letterSpacing: "-0.02em", lineHeight: 1.0, margin: 0, fontFamily: "Montserrat, sans-serif", whiteSpace: "nowrap" }}>
-                    {line2.display}
-                  </h1>
-                </div>
+                <FitText fontWeight={200} color="#4f8ef7">{line2.display}</FitText>
               </div>
             </div>
 
