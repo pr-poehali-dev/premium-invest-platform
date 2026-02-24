@@ -263,7 +263,7 @@ export default function Index() {
         <div style={{ position: "relative", zIndex: 4, flex: 1, display: "flex", flexDirection: "column", padding: "20px", boxSizing: "border-box" }}>
 
           {/* ── NAV ── */}
-          <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0, marginBottom: "auto" }}>
+          <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
             <Reveal delay={100}>
               <span style={{ fontSize: "clamp(0.75rem, 1.1vw, 1rem)", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "#e8eaf0" }}>
                 Invest<span style={{ color: "#4f8ef7" }}>Starts</span>
@@ -302,17 +302,18 @@ export default function Index() {
           </nav>
 
           {/* ── ЗАГОЛОВОК — центр тяжести ── */}
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", paddingTop: "clamp(1.5rem, 4vh, 4rem)" }}>
 
+            <div>
             <Reveal delay={280}>
               <div className="inline-flex items-center gap-2"
-                style={{ background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.16)", color: "rgba(255,255,255,0.4)", padding: "clamp(0.3rem, 0.5vh, 0.5rem) clamp(0.8rem, 1.2vw, 1.2rem)", borderRadius: "2rem", marginBottom: "clamp(1rem, 2.5vh, 2.5rem)", display: "inline-flex" }}>
+                style={{ background: "rgba(79,142,247,0.06)", border: "1px solid rgba(79,142,247,0.16)", color: "rgba(255,255,255,0.4)", padding: "0.35rem 1rem", borderRadius: "2rem", marginBottom: "clamp(0.8rem, 2vh, 2rem)", display: "inline-flex" }}>
                 <span className="animate-pulse" style={{ width: 6, height: 6, borderRadius: "50%", background: "#4f8ef7", flexShrink: 0 }} />
-                <span style={{ fontSize: "clamp(0.55rem, 0.75vw, 0.72rem)", fontWeight: 300, letterSpacing: "0.16em" }}>128 инвесторов на платформе</span>
+                <span style={{ fontSize: "0.72rem", fontWeight: 300, letterSpacing: "0.16em" }}>128 инвесторов на платформе</span>
               </div>
             </Reveal>
 
-            <div style={{ marginBottom: "clamp(1.5rem, 3vh, 3rem)" }}>
+            <div style={{ marginBottom: "clamp(1rem, 2.5vh, 2.5rem)" }}>
               <div style={{
                 opacity: showContent ? 1 : 0,
                 transform: showContent ? "translateY(0)" : "translateY(20px)",
@@ -350,6 +351,8 @@ export default function Index() {
                   </h1>
                 </div>
               </div>
+            </div>
+
             </div>
 
             <Reveal delay={850}>
